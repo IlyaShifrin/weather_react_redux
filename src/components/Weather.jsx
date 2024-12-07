@@ -1,13 +1,17 @@
-const Weather = ({weather, message}) => {
+import {useSelector} from "react-redux";
+
+const Weather = () => {
+    const {country, city, temp, pressure, sunset} = useSelector(state => state.weatherInfo);
+    const {message} = useSelector(state => state.message);
 
     return (
         <div className={'infoWeath'}>
             {!message &&
                 <> {/*это фрагмент Fragment'*/}
-                    <p>Location: {weather.country}, {weather.city}</p>
-                    <p>Temp: {weather.temp}</p>
-                    <p>Pressure: {weather.pressure}</p>
-                    <p>Sunset: {new Date(weather.sunset * 1000).toLocaleTimeString()}</p>
+                    <p>Location: {country}, {city}</p>
+                    <p>Temp: {temp}</p>
+                    <p>Pressure: {pressure}</p>
+                    <p>Sunset: {new Date(sunset * 1000).toLocaleTimeString()}</p>
                 </>
             }
             {message}
