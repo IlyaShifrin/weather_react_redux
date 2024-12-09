@@ -1,14 +1,14 @@
 import {CHANGE_WEATHER_INFO} from "../actions/userAction.js";
 
-const defaultState = {
-    country: '',
-    city: '',
-    temp: '',
-    pressure: '',
-    sunset: ''
-}
+// const defaultState = {
+//     country: '',
+//     city: '',
+//     temp: '',
+//     pressure: '',
+//     sunset: ''
+// }
 
-export const weatherInfoReducer = (state = defaultState, action) => {
+export const weatherInfoReducer = (state = {}, action) => {
     switch (action.type) {
         case CHANGE_WEATHER_INFO:
             return {
