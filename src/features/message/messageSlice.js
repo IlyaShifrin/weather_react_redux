@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const messageSlice = createSlice ({
     name: 'message',
-    initialState: {message: 'Enter city name'},
+    initialState: 'Enter city name',
     reducers: {
         changeMessage: (state, action) => action.payload
     }
