@@ -4,16 +4,7 @@ const weatherInfoSlice = createSlice({
     name: 'weatherInfo',
     initialState: {},
     reducers: {
-        changeWeatherInfo: (state, action) => {
-            return {
-                ...state,
-                country: action.payload.country,
-                city: action.payload.city,
-                temp: action.payload.temp,
-                pressure: action.payload.pressure,
-                sunset: action.payload.sunset
-            }
-        }
+        changeWeatherInfo: (state, action) => action.payload
     }
 })
 
