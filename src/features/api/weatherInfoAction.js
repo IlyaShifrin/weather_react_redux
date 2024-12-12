@@ -4,6 +4,7 @@ import {changeWeatherInfo} from "../weatherInfo/weatherInfoSlice.js";
 
 export const fetchWeatherInfo = city => {
     return dispatch => {
+        dispatch(changeMessage('Pending...'));
         fetch(`${base_url}?q=${city}&appid=${api_key}&units=metric`, {})
             .then(result => result.json())
             .then(data => {
